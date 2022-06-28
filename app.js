@@ -10,6 +10,7 @@ app.use("/api/auth", require("./routes/auth"))
 app.use("/api/orders", require("./routes/orders"))
 
 if (process.env.NODE_ENV === "production"){
+    console.log("production")
    app.use("/", express.static(path.join(__dirname, "client", "build")))
     app.get('*',(req, res)=>{
         res.sendfile(path.resolve(__dirname,"client", "build", "index.html"))
