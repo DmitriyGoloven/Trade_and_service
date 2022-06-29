@@ -38,7 +38,7 @@ const Home = () => {
                         <Row className={"type-row"}>
                             <Col sm={6} xs={12}>
                                 <h4>Wall painting</h4>
-                                <p>Preparation, alignment,painting.</p>
+                                <p>Preparation, alignment, painting.</p>
                             </Col>
                             <Col sm={6} xs={12}>
                                 <h4>Laying tiles</h4>
@@ -61,14 +61,14 @@ const Home = () => {
                                 <p>Leveling, laying laminate and tiles</p>
                             </Col>
                             <Col sm={6} xs={12}>
-                                <h4>Floor repair</h4>
-                                <p>Leveling, laying laminate and tiles</p>
+                                <h4>Water pipes</h4>
+                                <p>Repair, restoration and pipe laying</p>
                             </Col>
                         </Row>
                         <Row className={"type-row"}>
                             <Col sm={6} xs={12}>
-                                <h4>Outdoor repairs</h4>
-                                <p>Required wall decoration</p>
+                                <h4>Roof repair</h4>
+                                <p>Restoration and replacement of coating</p>
                             </Col>
                             <Col sm={6} xs={12}>
                                 <h4>Door replacement</h4>

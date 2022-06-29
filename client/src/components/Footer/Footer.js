@@ -86,7 +86,7 @@ const Footer = () => {
                                 <option value="Repairing floors">Repairing floors</option>
                                 <option value="Replacing doors">Replacing doors</option>
                                 <option value="Outdoor work">Outdoor work</option>
-                                <option value="indoor work">indoor work</option>
+                                <option value="Indoor work">indoor work</option>
                                 <option value="Another type">Another type</option>
                             </Form.Select>
                         </Form.Group>

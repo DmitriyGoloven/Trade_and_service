@@ -1,9 +1,6 @@
 import React, {useEffect} from 'react';
 import {Card, Carousel, CarouselItem, Col, Container, Row} from "react-bootstrap";
-import dvor1 from "./dvor1.jpg";
-import dvor from "./dvor.jpg";
-import card11 from "./card11.png";
-import card12 from "./card12.png";
+import wallsAndFloorsArr from "../Gallery/WallsAndFloors/WallsAndFloors"
 
 
 const About = () => {
@@ -12,7 +9,7 @@ const About = () => {
 
     return (
         <div>
-            <h2>Some info and good words about Andrew's company</h2>
+            <h2>Trade and service LLC</h2>
             <Container style={{backgroundColor: "lightgray"}}>
                 <Row>
                     <Col md={6}
@@ -21,14 +18,14 @@ const About = () => {
                             <Carousel.Item interval={2000}>
                                 <img
                                     className="d-block w-100"
-                                    src={dvor1}
+                                    src={wallsAndFloorsArr[3]}
                                     alt="First slide"
                                 />
                             </Carousel.Item>
                             <Carousel.Item interval={2000}>
                                 <img
                                     className="d-block w-100"
-                                    src={dvor}
+                                    src={wallsAndFloorsArr[2]}
                                     alt="Third slide"
                                 />
                             </Carousel.Item>
@@ -49,8 +46,8 @@ const About = () => {
                         </Col>
 
                         <Col>
-                            <h4>Quality materials</h4>
-                            <p>Safety and comfort around You</p>
+                            <h4>Professional equipment</h4>
+                            <p>Quality work performance</p>
                         </Col>
 
                         <Col>
@@ -67,36 +64,34 @@ const About = () => {
 
             <Container style={{backgroundColor: "lightgray"}}>
 
-                <Carousel fade variant="dark" style={{padding: "15px"}}>
+                <Carousel variant="dark" style={{padding: "15px"}}>
                     <CarouselItem interval={3000} style={{height: "300px"}}>
                         <Row className="justify-content-md-center">
                             <Col>
-                                <Card>
-                                    <Card.Img src={card11} alt="Card image"
+                                <Card >
+                                    <Card.Img src={wallsAndFloorsArr[5]} alt="Card image"
                                               className="d-block h-100"
-                                              style={{opacity: "0.4"}}/>
-                                    <Card.ImgOverlay style={{color: "black"}}>
-                                        <h3>Lena Y.</h3>
-                                        <Card.Text>
-                                            Lorem amet, conseonsequuntur hupsuquiss consequuntarumconsequonsequuntur
-                                            harum incidunt,
-                                            perferendis rempsupsuquiss consequuntur harum consequuntur harum!
-                                        </Card.Text>
+                                              style={{opacity: "0.3"}}/>
+                                    <Card.ImgOverlay style={{color: "black", padding: "5px 10px" }}>
+                                        <h3>Micheal Y.</h3>
+                                        {/*<Card.Text>*/}
+                                            <h4>Very responsible people, they did a complete
+                                                renovation in my bedroom with high quality and quickly.</h4>
+                                        {/*</Card.Text>*/}
                                     </Card.ImgOverlay>
                                 </Card>
                             </Col>
                             <Col className="d-none d-sm-block">
                                 <Card>
-                                    <Card.Img src={card12} alt="Card image"
+                                    <Card.Img src={wallsAndFloorsArr[10]} alt="Card image"
                                               className="d-block h-100"
-                                              style={{opacity: "0.4"}}/>
-                                    <Card.ImgOverlay style={{color: "black"}}>
-                                        <h3>Lena Y.</h3>
-                                        <Card.Text>
-                                            Lorem amet, conseonsequuntur hupsuquiss consequuntarumconsequonsequuntur
-                                            harum incidunt,
-                                            perferendis rempsupsuquiss consequuntur harum consequuntur harum!
-                                        </Card.Text>
+                                              style={{opacity: "0.3"}}/>
+                                    <Card.ImgOverlay style={{color: "black", padding: "5px 10px" }}>
+                                        <h3>Emma G.</h3>
+                                        {/*<Card.Text>*/}
+                                            <h4> Many thanks for the quality painting of
+                                                the house in the shortest possible time.</h4>
+                                        {/*</Card.Text>*/}
                                     </Card.ImgOverlay>
                                 </Card>
                             </Col>
@@ -108,31 +103,31 @@ const About = () => {
                         <Row className="justify-content-md-center">
                             <Col>
                                 <Card>
-                                    <Card.Img src={card11} alt="Card image"
+                                    <Card.Img src={wallsAndFloorsArr[1]} alt="Card image"
                                               className="d-block h-100"
-                                              style={{opacity: "0.4"}}/>
-                                    <Card.ImgOverlay style={{color: "black"}}>
-                                        <h3>Vova S.</h3>
-                                        <Card.Text >
-                                           Lorem amet, consequuntur harum ur hupsuquiss consequuntarumconsequonsequuntur
-                                            harum incidunt,
-                                                perferendis rempsupsuquiss consequuntur harum consequuntur harum!
-                                        </Card.Text>
+                                              style={{opacity: "0.3"}}/>
+                                    <Card.ImgOverlay style={{color: "black", padding: "5px 10px" }}>
+                                        <h3>Joshua S.</h3>
+                                        {/*<Card.Text >*/}
+                                           <h4>Fast and professional workers, everyone does their
+                                               job well. The timing and cost were very good.</h4>
+                                        {/*</Card.Text>*/}
                                     </Card.ImgOverlay>
                                 </Card>
                             </Col>
                             <Col className="d-none d-sm-block">
                                 <Card>
-                                    <Card.Img src={card12} alt="Card image"
+                                    <Card.Img src={wallsAndFloorsArr[9]} alt="Card image"
                                               className="d-block h-100"
-                                              style={{opacity: "0.4"}}/>
-                                    <Card.ImgOverlay style={{color: "black"}}>
-                                        <h3>Kirs M.</h3>
-                                        <Card.Text>
-                                          dunt,Lorem amet, conseor hupsuquiss consequuntarumconsequonsequuntur
-                                            harum incidunt,
-                                               perferendis rempsupsuquiss consequuntur harum consequuntur harum!
-                                        </Card.Text>
+                                              style={{opacity: "0.3"}}/>
+                                    <Card.ImgOverlay style={{color: "black", padding: "5px 10px" }}>
+                                        <h3>Kris M.</h3>
+                                        {/*<Card.Text>*/}
+                                            <h4>Thank you for your work! I am very satisfied with the quality
+                                                of the tiling and the renovation of
+                                                the roof of my house. All terms of the contract were fulfilled
+                                                within the stipulated time.</h4>
+                                        {/*</Card.Text>*/}
                                     </Card.ImgOverlay>
                                 </Card>
                             </Col>
