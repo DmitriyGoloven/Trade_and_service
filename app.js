@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === "production"){
     console.log("production")
    app.use("/", express.static(path.join(__dirname, "client", "build")))
     app.get('*',(req, res)=>{
-        res.sendfile(path.resolve(__dirname,"client", "build", "index.html"))
+        res.sendFile(path.resolve(__dirname,"client", "build", "index.html"))
     })
 }
 
@@ -21,7 +21,10 @@ const PORT = config.get("port") || 5000
 async  function start(){
     try{
          await mongoose.connect(config.get("mongoURL"), {
-         },()=>console.log("mongoDB connected"))
+             useNewUrlParser: true,
+             useUnifiedTopology: true,
+             useCreateIndex: true
+         },(e)=>console.log(`mongoDB connected: ${e}`))
         app.listen(PORT, ()=>{console.log(`App started on port ${PORT}`)})
     } catch (e){
         console.log("server error")
