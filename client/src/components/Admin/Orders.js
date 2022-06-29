@@ -71,7 +71,7 @@ const Orders = () => {
 
     return (
 
-        <Container>
+        <Container fluid>
             <h2>Orders</h2>
             {loading ? <div className="loader">Loading...</div> :
                 <OrdersList orders={orders} deleteOrder={deleteOrder}/>}

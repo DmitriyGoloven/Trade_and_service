@@ -4,7 +4,7 @@ import {Container, Table} from "react-bootstrap";
 const OrdersList = ({orders, deleteOrder}) => {
 
     return (
-        <Container>
+        <Container fluid>
             <Table striped bordered hover variant="dark">
                 <thead>
                 <tr>
