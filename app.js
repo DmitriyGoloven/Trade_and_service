@@ -20,8 +20,10 @@ if (process.env.NODE_ENV === "production"){
 const PORT = config.get("port") || 5000
 async  function start(){
     try{
-         await mongoose.connect(config.get("mongoURL"), (e)=>console.log(`mongoDB connected: ${e}`))
         app.listen(PORT, ()=>{console.log(`App started on port ${PORT}`)})
+         await mongoose.connect(config.get("mongoURL"),
+             (e)=>console.log(`mongoDB connected: ${e}`))
+        // app.listen(PORT, ()=>{console.log(`App started on port ${PORT}`)})
     } catch (e){
         console.log("server error")
         process.exit(1)
