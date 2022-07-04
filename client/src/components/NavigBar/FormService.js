@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {useHttp} from "../Admin/hooks/http.hook";
 import {Button, Container, Form} from "react-bootstrap";
 import {toast} from "react-toastify";
+import {useHttp} from "../Admin/hooks/http.hook";
 
 
 const FormService = ({HandleClose}) => {
 
     const {loading, error, request, clearError} = useHttp()
+
     const [form, setForm] = useState({
         email: "", phone: "", service: "default", name: "", date: new Date().toLocaleString()
     })
@@ -92,9 +93,7 @@ const FormService = ({HandleClose}) => {
                         </Button>
                     </div>
                 </Form>
-
             </Container>
-
         </div>
     );
 };

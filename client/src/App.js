@@ -1,9 +1,9 @@
 import React from "react";
+import {Route, Routes, BrowserRouter} from "react-router-dom";
+import {ToastContainer} from "react-toastify";
 import './style/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-toastify/dist/ReactToastify.css';
-import {Route, Routes, BrowserRouter} from "react-router-dom";
-import {ToastContainer} from "react-toastify";
 
 import NavigBar from "./components/NavigBar/NavigBar";
 import Home from "./components/Home/Home";
@@ -20,16 +20,17 @@ function App() {
         <div>
             <BrowserRouter>
                 <NavigBar/>
-                <ToastContainer theme="dark" autoClose={3000}
-                                hideProgressBar={true} />
+                <ToastContainer theme="dark"
+                                autoClose={3000}
+                                hideProgressBar={true}/>
                 <Routes>
-                    {/*<Route exact path="/" element={<Home/>}/>*/}
+                    <Route exact path="/*" element={<Home/>}/>
                     <Route exact path="/gallery" element={<Gallery/>}/>
                     <Route exact path="/about" element={<About/>}/>
-                    <Route exact path="/*" element={<Home/>}/>
                     <Route exact path="/auth" element={<Auth/>}/>
                     <Route exact path="/orders" element={<Orders/>}/>
                 </Routes>
+
                 <Footer/>
             </BrowserRouter>
         </div>

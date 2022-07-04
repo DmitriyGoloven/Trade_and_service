@@ -5,7 +5,7 @@ const OrdersList = ({orders, deleteOrder}) => {
 
     return (
         <Container fluid>
-            <Table striped bordered hover variant="dark">
+            <Table striped bordered hover size="sm" variant="dark">
                 <thead>
                 <tr>
                     <th>№</th>

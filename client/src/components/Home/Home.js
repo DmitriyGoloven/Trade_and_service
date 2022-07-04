@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import Slider from "../Slider/Slider";
 import {Card, Col, Container, Row} from "react-bootstrap";
 import Image from 'react-bootstrap/Image'
-
-import man from "./man.png"
 import {Link} from "react-router-dom";
 import WallsAndFloorsArr from "../Gallery/WallsAndFloors/WallsAndFloors"
+import Slider from "../Slider/Slider";
 import Lightbox from "react-image-lightbox";
+import man from "./man.png"
 
 
 const Home = () => {
@@ -24,7 +23,7 @@ const Home = () => {
             <h2>Type of repairs</h2>
             <h3> All works is done by professionals and within the agreed time frame</h3>
 
-            <Container style={{padding: "15px", backgroundColor: "lightgray"}}>
+            <Container className={"container-shadow"}>
                 <Row>
                     <Col xl={5} md={5} xs={12}>
                         <Image src={man}
@@ -95,15 +94,15 @@ const Home = () => {
                 />
             )}
 
-
-            <Container style={{padding: "15px", backgroundColor: "lightgray"}}>
-                <Row >
+            <Container className={"container-shadow"}>
+                <Row>
                     <Col md={3} xs={6} className={"galleryCol"}>
                         <Card
                             className="galleryCard"
                             onClick={() => {
-                            setPhotoIndex(0)
-                            setIsOpen(true)}}>
+                                setPhotoIndex(0)
+                                setIsOpen(true)
+                            }}>
                             <Card.Img className={"galleryImage"} src={WallsAndFloorsArr[0]} alt="Card image"/>
                         </Card>
                     </Col>
@@ -111,8 +110,9 @@ const Home = () => {
                         <Card
                             className="galleryCard"
                             onClick={() => {
-                            setPhotoIndex(1)
-                            setIsOpen(true)}}>
+                                setPhotoIndex(1)
+                                setIsOpen(true)
+                            }}>
                             <Card.Img className={"galleryImage"} src={WallsAndFloorsArr[1]} alt="Card image"/>
                         </Card>
                     </Col>
@@ -120,8 +120,9 @@ const Home = () => {
                         <Card
                             className="galleryCard"
                             onClick={() => {
-                            setPhotoIndex(2)
-                            setIsOpen(true)}}>
+                                setPhotoIndex(2)
+                                setIsOpen(true)
+                            }}>
                             <Card.Img className={"galleryImage"} src={WallsAndFloorsArr[2]} alt="Card image"/>
                         </Card>
                     </Col>
@@ -129,50 +130,55 @@ const Home = () => {
                         <Card
                             className="galleryCard"
                             onClick={() => {
-                            setPhotoIndex(3)
-                            setIsOpen(true)}}>
+                                setPhotoIndex(3)
+                                setIsOpen(true)
+                            }}>
                             <Card.Img className={"galleryImage"} src={WallsAndFloorsArr[3]} alt="Card image"/>
                         </Card>
                     </Col>
                 </Row>
-                    <Row>
-                        <Col md={3} xs={6} className={"galleryCol"}>
-                            <Card
-                                className="galleryCard"
-                                onClick={() => {
+                <Row>
+                    <Col md={3} xs={6} className={"galleryCol"}>
+                        <Card
+                            className="galleryCard"
+                            onClick={() => {
                                 setPhotoIndex(4)
-                                setIsOpen(true)}}>
-                                <Card.Img className={"galleryImage"} src={WallsAndFloorsArr[4]} alt="Card image"/>
-                            </Card>
-                        </Col>
-                        <Col md={3} xs={6} className={"galleryCol"}>
-                            <Card
-                                className="galleryCard"
-                                onClick={() => {
+                                setIsOpen(true)
+                            }}>
+                            <Card.Img className={"galleryImage"} src={WallsAndFloorsArr[4]} alt="Card image"/>
+                        </Card>
+                    </Col>
+                    <Col md={3} xs={6} className={"galleryCol"}>
+                        <Card
+                            className="galleryCard"
+                            onClick={() => {
                                 setPhotoIndex(5)
-                                setIsOpen(true)}}>
-                                <Card.Img className={"galleryImage"} src={WallsAndFloorsArr[5]} alt="Card image"/>
-                            </Card>
-                        </Col>
-                        <Col md={3} xs={6} className={"galleryCol d-none d-md-block"}>
-                            <Card
-                                className="galleryCard"
-                                onClick={() => {
+                                setIsOpen(true)
+                            }}>
+                            <Card.Img className={"galleryImage"} src={WallsAndFloorsArr[5]} alt="Card image"/>
+                        </Card>
+                    </Col>
+                    <Col md={3} xs={6} className={"galleryCol d-none d-md-block"}>
+                        <Card
+                            className="galleryCard"
+                            onClick={() => {
                                 setPhotoIndex(6)
-                                setIsOpen(true)}}>
-                                <Card.Img className={"galleryImage"} src={WallsAndFloorsArr[6]} alt="Card image"/>
-                            </Card>
-                        </Col>
-                        <Col md={3} xs={6} className={"galleryCol d-none d-md-block"}>
-                            <Card
-                                className="galleryCard"
-                                onClick={() => {
+                                setIsOpen(true)
+                            }}>
+                            <Card.Img className={"galleryImage"} src={WallsAndFloorsArr[6]} alt="Card image"/>
+                        </Card>
+                    </Col>
+                    <Col md={3} xs={6} className={"galleryCol d-none d-md-block"}>
+                        <Card
+                            className="galleryCard"
+                            onClick={() => {
                                 setPhotoIndex(7)
-                                setIsOpen(true)}}>
-                                <Card.Img className={"galleryImage"} src={WallsAndFloorsArr[7]} alt="Card image"/>
-                            </Card>
-                        </Col>
-                    </Row>
+                                setIsOpen(true)
+                            }}>
+                            <Card.Img className={"galleryImage"} src={WallsAndFloorsArr[7]} alt="Card image"/>
+                        </Card>
+                    </Col>
+                </Row>
                 <Row>
                     <Link className={"gallery-link"} to={"/gallery"}>See more >>></Link>
                 </Row>

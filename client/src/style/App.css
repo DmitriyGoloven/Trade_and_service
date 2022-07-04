@@ -3,6 +3,7 @@
   background-color: gainsboro
 }
 
+
 .App-link {
   color: beige;
   font-size: 20px;
@@ -29,7 +30,7 @@
 }
 
 .btnStyle {
-  margin-right: 5px;
+  margin: 5px;
 }
 
 .footer-text{
@@ -76,9 +77,10 @@ h3{
   padding: 5px;
   text-shadow: grey 5px 5px 10px;
 }
-.gallery-container{
+.container-shadow{
   background-color: lightgray;
   padding: 5px 0;
+  box-shadow: 0 0 3px 3px lightgrey;
 }
 
 .type-row{

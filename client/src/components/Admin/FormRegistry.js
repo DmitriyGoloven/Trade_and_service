@@ -25,7 +25,7 @@ const FormRegistry = () => {
             const data = await request("/api/auth/register","POST",{...form})
             if (data.message) {alert(data.message)
             }
-        }catch (e){}
+        }catch (e){console.log(e)}
     }
 
     return (

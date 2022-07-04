@@ -1,6 +1,5 @@
 import {useCallback, useState} from "react";
 
-
 export const useHttp = () => {
 
     const [loading, setLoading] = useState(false)
@@ -14,6 +13,7 @@ export const useHttp = () => {
 
         setLoading(true)
         try {
+
             if (body) {
                 body = JSON.stringify(body)
                 headers['Content-Type'] = 'application/json'
@@ -24,6 +24,7 @@ export const useHttp = () => {
             if (response.status === 401) {
                 localStorage.removeItem("userToken")
             }
+
             if (!response.ok) {
 
                 throw new Error(data.message || "response Error")
@@ -31,6 +32,7 @@ export const useHttp = () => {
 
             setLoading(false)
             return data
+
         } catch (e) {
             setLoading(false)
             setError(e.message)

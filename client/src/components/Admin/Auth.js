@@ -1,5 +1,4 @@
 import React, {useCallback, useEffect, useState} from 'react';
-
 import {Form, Button, Container} from "react-bootstrap"
 import {useHttp} from "./hooks/http.hook";
 import {useNavigate} from "react-router-dom";
@@ -7,23 +6,23 @@ import {toast} from "react-toastify";
 
 const Auth = () => {
 
-    const {loading,error, request, clearError } = useHttp()
+    const {loading, error, request, clearError} = useHttp()
 
     const [form, setForm] = useState({
-        email:"",password:""
+        email: "", password: ""
     })
 
     const login = useCallback((jwtToken, id) => {
-        localStorage.setItem("userToken",jwtToken)
-        localStorage.setItem("userId",id)
+        localStorage.setItem("userToken", jwtToken)
+        localStorage.setItem("userId", id)
     }, [])
 
 
-
     useEffect(() => {
-        if (error){
-        toast.error(`${error}`)
-        clearError()}
+        if (error) {
+            toast.error(`${error}`)
+            clearError()
+        }
     }, [error, clearError])
 
     const navigate = useNavigate()
@@ -31,25 +30,28 @@ const Auth = () => {
     useEffect(() => {
         if (localUserID)
             navigate('/orders');
-    }, [localUserID,navigate])
+    }, [localUserID, navigate])
 
-    const changeHandler = event =>{
-        setForm({...form,[event.target.name]:event.target.value})
+    const changeHandler = event => {
+        setForm({...form, [event.target.name]: event.target.value})
     }
 
-    const loginHandler = async ()=>{
-        try{
-            const data = await request("/api/auth/login","POST",{...form})
+    const loginHandler = async () => {
+        try {
+            const data = await request("/api/auth/login", "POST", {...form})
             login(data.token, data.userId)
-            if (data.message) {toast.info(data.message)}
-        }catch (e){}
+            if (data.message) {
+                toast.info(data.message)
+            }
+        } catch (e) {
+        }
     }
 
     return (
         <div>
-            <Container fluid={"sm"} style={{padding:"10% 15%"}}>
+            <Container fluid={"sm"} style={{padding: "10% 15%"}}>
                 <Form>
-                    <h3 >
+                    <h3>
                         Login to admin panel
                     </h3>
                     <Form.Group className="mb-3" controlId="formBasicEmail">

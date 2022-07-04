@@ -21,20 +21,23 @@ const Footer = () => {
     }
 
     const sandRequest = async () => {
+
         try {
 
-            await setForm({...form, date : new Date().toLocaleString()})
-            const data = await request("/api/orders/service", "POST", {...form})
+            const data = await request("/api/orders/service", "POST", {...form, date: new Date().toLocaleString()})
 
             if (data.message) {
                 toast.success(data.message)
             }
             if (data) {
+                await setForm({...form, service: "",})
+
                 document.getElementById("form").reset()
             }
         } catch (e) {
         }
     }
+
     useEffect(() => {
         if (error) {
             toast.error(`${error}`);
@@ -46,7 +49,7 @@ const Footer = () => {
     return (
         <div>
             <h2>Get best service</h2>
-            <Container style={{paddingTop: "15px", backgroundColor: "lightgray"}}>
+            <Container className={"container-shadow"}>
                 <Form id={"form"}>
                     <Row className="mb-3">
                         <Form.Group as={Col} controlId="email">
@@ -104,9 +107,11 @@ const Footer = () => {
                     </Row>
                 </Form>
             </Container>
-        <br/>
+            <br/>
             <Container fluid className={"footer"} style={{backgroundImage: `url(${background})`}}>
-                <Container className="justify-content-md-center" style={{padding: "15px"}}>
+
+                <Container className="justify-content-md-center" style={{paddingTop: "15px"}}>
+
                     <Row>
                         <Col md={2} xs={7} onClick={() => {
                             navigate("/", {replace: true})
@@ -120,7 +125,6 @@ const Footer = () => {
                         </Col>
                         <Col md={3} xs={5}>
                             <h5 style={{color: "lightgray"}}> Links</h5>
-
                             <Link className={"footer-text"} to={"/gallery"}>Gallery</Link>
                             <br/>
                             <Link className={"footer-text"} to={"/about"}>About</Link>
@@ -128,7 +132,7 @@ const Footer = () => {
                         <Col md={4} xs={7}>
                             <h5 style={{color: "lightgray"}}> Contact us</h5>
                             <div>
-                                <a className={"footer-text"} href={"tel: 3222021391"}>(321)2021391</a>
+                                <a className={"footer-text"} href={"tel: 3212021391"}>(321)2021391</a>
                             </div>
                             <div>
                                 <a className={"footer-text"} href={"mailto: anjeuzp@gmail.com"}>anjeuzp@ gmail.com</a>
@@ -139,8 +143,11 @@ const Footer = () => {
                             <p className={"footer-text"}>7 days a week<br/>8:00 - 17:00</p>
                         </Col>
                     </Row>
+
                 </Container>
 
+                <span style={{fontSize: "11px", color: "white"}}>©2022 Trade and services
+                    LLC </span>
 
             </Container>
 

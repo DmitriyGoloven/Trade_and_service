@@ -1,11 +1,11 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import {Button, Container, Modal} from "react-bootstrap";
-import FormRegistry from "./FormRegistry";
 import {useHttp} from "./hooks/http.hook";
+import FormRegistry from "./FormRegistry";
 import OrdersList from "./OrdersList";
-import "./loader.css"
 import {toast} from "react-toastify";
+import "./loader.css"
 
 const Orders = () => {
 
@@ -17,7 +17,6 @@ const Orders = () => {
     }, [localUserID, navigate])
 
     const {loading, error, request, clearError} = useHttp()
-
     const [orders, setOrders] = useState([])
     const [show, setShow] = useState(false)
 
@@ -26,7 +25,7 @@ const Orders = () => {
 
     const services = useCallback(async () => {
         try {
-            const data = await request("/api/orders/services", "POST",null,{
+            const data = await request("/api/orders/services", "POST", null, {
                 Authorization: `Bearer ${localUserID}`
             })
 
@@ -35,28 +34,37 @@ const Orders = () => {
             }
             setOrders(data)
 
-        } catch (e) { console.log(e)
+        } catch (e) {
+            console.log(e)
         }
 
-    }, [request,localUserID])
+    }, [request, localUserID])
 
     const deleteOrder = useCallback(async (id) => {
+
         try {
+
             await request("/api/orders/delete", "POST", {id})
             services().then()
+
         } catch (e) {
+            console.log(e)
         }
     }, [request, services])
 
 
     const logout = useCallback(() => {
+
         localStorage.removeItem("userToken")
         localStorage.removeItem("userId")
+
         navigate('/auth')
     }, [navigate])
 
     const HandleRefresh = useCallback(() => {
+
         services().then()
+
     }, [services])
 
     useEffect(() => {
@@ -65,6 +73,7 @@ const Orders = () => {
             toast.error(`${error}`)
             clearError()
         }
+
         services().then()
     }, [error, clearError, services])
 
@@ -76,21 +85,21 @@ const Orders = () => {
             {loading ? <div className="loader">Loading...</div> :
                 <OrdersList orders={orders} deleteOrder={deleteOrder}/>}
             <div style={{textAlign: "center", padding: "10px"}}>
-                <Button
-                    onClick={logout}
-                    variant="danger"
+                <Button className={"btnStyle"}
+                        onClick={logout}
+                        variant="danger"
                 >
                     logout
                 </Button>
-                <Button
-                    onClick={HandleShow}
-                    variant="primary"
+                <Button className={"btnStyle"}
+                        onClick={HandleShow}
+                        variant="primary"
                 >
                     New user registration
                 </Button>
-                <Button
-                    onClick={HandleRefresh}
-                    variant="secondary"
+                <Button className={"btnStyle"}
+                        onClick={HandleRefresh}
+                        variant="secondary"
                 >
                     Refresh
                 </Button>

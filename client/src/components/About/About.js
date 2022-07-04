@@ -2,15 +2,16 @@ import React, {useEffect} from 'react';
 import {Card, Carousel, CarouselItem, Col, Container, Row} from "react-bootstrap";
 import wallsAndFloorsArr from "../Gallery/WallsAndFloors/WallsAndFloors"
 
-
 const About = () => {
 
-    useEffect(()=>{window.scrollTo(0,0)},[])
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
-        <div>
+        <>
             <h2>Trade and service LLC</h2>
-            <Container style={{backgroundColor: "lightgray"}}>
+            <Container className={"container-shadow"}>
                 <Row>
                     <Col md={6}
                          style={{padding: "1rem 1rem"}}>
@@ -61,23 +62,19 @@ const About = () => {
             <h2>What our customers say </h2>
             <h3>We have 99% positive feedback for the work done</h3>
 
-
-            <Container style={{backgroundColor: "lightgray"}}>
-
+            <Container className={"container-shadow"}>
                 <Carousel variant="dark" style={{padding: "15px"}}>
                     <CarouselItem interval={3000} style={{height: "300px"}}>
                         <Row className="justify-content-md-center">
                             <Col>
-                                <Card >
+                                <Card>
                                     <Card.Img src={wallsAndFloorsArr[5]} alt="Card image"
                                               className="d-block h-100"
                                               style={{opacity: "0.3"}}/>
-                                    <Card.ImgOverlay style={{color: "black", padding: "5px 10px" }}>
+                                    <Card.ImgOverlay style={{color: "black", padding: "5px 10px"}}>
                                         <h3>Micheal Y.</h3>
-                                        {/*<Card.Text>*/}
-                                            <h4>Very responsible people, they did a complete
-                                                renovation in my bedroom with high quality and quickly.</h4>
-                                        {/*</Card.Text>*/}
+                                        <h4>Very responsible people, they did a complete
+                                            renovation in my bedroom with high quality and quickly.</h4>
                                     </Card.ImgOverlay>
                                 </Card>
                             </Col>
@@ -86,18 +83,15 @@ const About = () => {
                                     <Card.Img src={wallsAndFloorsArr[10]} alt="Card image"
                                               className="d-block h-100"
                                               style={{opacity: "0.3"}}/>
-                                    <Card.ImgOverlay style={{color: "black", padding: "5px 10px" }}>
+                                    <Card.ImgOverlay style={{color: "black", padding: "5px 10px"}}>
                                         <h3>Emma G.</h3>
-                                        {/*<Card.Text>*/}
-                                            <h4> Many thanks for the quality painting of
-                                                the house in the shortest possible time.</h4>
-                                        {/*</Card.Text>*/}
+                                        <h4> Many thanks for the quality painting of
+                                            the house in the shortest possible time.</h4>
                                     </Card.ImgOverlay>
                                 </Card>
                             </Col>
                         </Row>
                     </CarouselItem>
-
 
                     <CarouselItem interval={3000} style={{height: "300px"}}>
                         <Row className="justify-content-md-center">
@@ -106,12 +100,10 @@ const About = () => {
                                     <Card.Img src={wallsAndFloorsArr[1]} alt="Card image"
                                               className="d-block h-100"
                                               style={{opacity: "0.3"}}/>
-                                    <Card.ImgOverlay style={{color: "black", padding: "5px 10px" }}>
+                                    <Card.ImgOverlay style={{color: "black", padding: "5px 10px"}}>
                                         <h3>Joshua S.</h3>
-                                        {/*<Card.Text >*/}
-                                           <h4>Fast and professional workers, everyone does their
-                                               job well. The timing and cost were very good.</h4>
-                                        {/*</Card.Text>*/}
+                                        <h4>Fast and professional workers, everyone does their
+                                            job well. The timing and cost were very good.</h4>
                                     </Card.ImgOverlay>
                                 </Card>
                             </Col>
@@ -120,24 +112,20 @@ const About = () => {
                                     <Card.Img src={wallsAndFloorsArr[9]} alt="Card image"
                                               className="d-block h-100"
                                               style={{opacity: "0.3"}}/>
-                                    <Card.ImgOverlay style={{color: "black", padding: "5px 10px" }}>
+                                    <Card.ImgOverlay style={{color: "black", padding: "5px 10px"}}>
                                         <h3>Kris M.</h3>
-                                        {/*<Card.Text>*/}
-                                            <h4>Thank you for your work! I am very satisfied with the quality
-                                                of the tiling and the renovation of
-                                                the roof of my house. All terms of the contract were fulfilled
-                                                within the stipulated time.</h4>
-                                        {/*</Card.Text>*/}
+                                        <h4>Thank you for your work! I am very satisfied with the quality
+                                            of the tiling and the renovation of
+                                            the roof of my house. All terms of the contract were fulfilled
+                                            within the stipulated time.</h4>
                                     </Card.ImgOverlay>
                                 </Card>
                             </Col>
                         </Row>
                     </CarouselItem>
                 </Carousel>
-
             </Container>
-
-        </div>
+        </>
     );
 };
 
