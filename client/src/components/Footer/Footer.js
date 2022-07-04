@@ -13,7 +13,7 @@ const Footer = () => {
     const {loading, error, request, clearError} = useHttp()
 
     const [form, setForm] = useState({
-        email: "", phone: "", service: "default", name: ""
+        email: "", phone: "", service: "default", name: "", date: ""
     })
 
     const changeHandler = event => {
@@ -23,6 +23,7 @@ const Footer = () => {
     const sandRequest = async () => {
         try {
 
+            await setForm({...form, date : new Date().toLocaleString()})
             const data = await request("/api/orders/service", "POST", {...form})
 
             if (data.message) {
@@ -85,9 +86,9 @@ const Footer = () => {
                                 <option value="Painting walls">Painting walls</option>
                                 <option value="Repairing floors">Repairing floors</option>
                                 <option value="Replacing doors">Replacing doors</option>
-                                <option value="Outdoor work">Outdoor work</option>
-                                <option value="Indoor work">indoor work</option>
-                                <option value="Another type">Another type</option>
+                                <option value="Replacing windows">Replacing windows</option>
+                                <option value="Roof repair">Roof repair</option>
+                                <option value="Plumbing work">Plumbing work</option>
                             </Form.Select>
                         </Form.Group>
                         <div className="d-grid gap-2" style={{padding: "25px 20%"}}>

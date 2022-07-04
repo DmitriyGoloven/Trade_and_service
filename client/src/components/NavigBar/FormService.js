@@ -8,7 +8,7 @@ const FormService = ({HandleClose}) => {
 
     const {loading, error, request, clearError} = useHttp()
     const [form, setForm] = useState({
-        email: "", phone: "", service: "default", name: ""
+        email: "", phone: "", service: "default", name: "", date: new Date().toLocaleString()
     })
 
     const changeHandler = event => {
@@ -43,7 +43,7 @@ const FormService = ({HandleClose}) => {
             <Container fluid={"sm"} style={{padding: "2% 5%"}}>
                 <Form>
                     <Form.Group className="mb-3" controlId="email">
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label>Email address*</Form.Label>
                         <Form.Control
                             name={"email"}
                             type="email"
@@ -53,7 +53,7 @@ const FormService = ({HandleClose}) => {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="phone">
-                        <Form.Label>Phone number</Form.Label>
+                        <Form.Label>Phone number*</Form.Label>
                         <Form.Control
                             name={"phone"}
                             type="tel"
@@ -62,7 +62,7 @@ const FormService = ({HandleClose}) => {
                         />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="name">
-                        <Form.Label>Name</Form.Label>
+                        <Form.Label>Name*</Form.Label>
                         <Form.Control style={{textTransform: "capitalize"}}
                                       name={"name"}
                                       type="text"
