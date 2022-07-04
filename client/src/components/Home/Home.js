@@ -71,8 +71,8 @@ const Home = () => {
                                 <p>Restoration and replacement of coating</p>
                             </Col>
                             <Col sm={6} xs={12}>
-                                <h4>Door replacement</h4>
-                                <p>Dismantling and installation</p>
+                                <h4>Plumbing work</h4>
+                                <p>Plumbing repair and installation</p>
                             </Col>
                         </Row>
                     </Col>

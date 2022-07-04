@@ -16,8 +16,8 @@ const Slider = () => {
                     height={"100%"}
                 />
                 <Carousel.Caption>
-                    <h3>Trade and services LLC</h3>
-                    <p>Responsibility is the key to success</p>
+                    <h3 style={{textShadow:"1px 1px 9px white"}}>Trade and services LLC</h3>
+                    <p style={{textShadow:"1px 1px 8px white",fontWeight: "600"}}>Responsibility is the key to success</p>
                 </Carousel.Caption>
             </Carousel.Item >
             <Carousel.Item interval={2000} style={{height: '300px'}}>
@@ -29,8 +29,8 @@ const Slider = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3>Trade and services LLC</h3>
-                    <p>Responsibility is the key to success</p>
+                    <h3 style={{textShadow:"1px 1px 9px white"}}>Trade and services LLC</h3>
+                    <p style={{textShadow:"1px 1px 8px white",fontWeight: "600"}}>Responsibility is the key to success</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item interval={2000} style={{height: '300px'}}>
@@ -42,8 +42,8 @@ const Slider = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3>Trade and services LLC</h3>
-                    <p>Responsibility is the key to success</p>
+                    <h3 style={{textShadow:"1px 1px 9px white"}}>Trade and services LLC</h3>
+                    <p style={{textShadow:"1px 1px 8px white",fontWeight: "600"}}>Responsibility is the key to success</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

@@ -76,9 +76,9 @@ const FormService = ({HandleClose}) => {
                         <option value="Painting walls">Painting walls</option>
                         <option value="Repairing floors">Repairing floors</option>
                         <option value="Replacing doors">Replacing doors</option>
-                        <option value="Outdoor work">Outdoor work</option>
-                        <option value="indoor work">indoor work</option>
-                        <option value="Another type">Another type</option>
+                        <option value="Replacing windows">Replacing windows</option>
+                        <option value="Roof repair">Roof repair</option>
+                        <option value="Plumbing work">Plumbing work</option>
                     </Form.Select>
 
                     <div className="d-grid gap-2" style={{padding: "25px 0"}}>
