@@ -1,5 +1,0 @@
-{
-  "port": 5000,
-  "jwtKey": "Orlando",
-  "mongoURL": "mongodb+srv://GolovenDmitriy:lbvf341120@cluster0.0kd37rm.mongodb.net/app?retryWrites=true&w=majority"
-}

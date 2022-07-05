@@ -2,9 +2,7 @@ const {Router} = require("express")
 const auth = require("./middleware/auth")
 const router = Router()
 const {check, validationResult} = require("express-validator")
-
 const Service = require("../models/service")
-
 
 
 router.post("/service",

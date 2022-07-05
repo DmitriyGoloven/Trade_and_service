@@ -5,7 +5,6 @@ const jwt = require("jsonwebtoken")
 const config = require("config")
 const {check, validationResult} = require("express-validator")
 const User = require("../models/users")
-const auth = require("./middleware/auth")
 
 
 router.post("/register",
@@ -21,7 +20,7 @@ router.post("/register",
 
                 return res.status(400).json({
                     errors: errors.array(),
-                    message: "invalid register data(check email, min password length 6 characters) "
+                    message: "invalid register data (check email, min password length 6 characters) "
                 })
             }
 
@@ -42,9 +41,7 @@ router.post("/register",
         } catch (e) {
             res.status(501).json({message: "err /register"})
         }
-
     })
-
 
 router.post("/login",
     [
@@ -82,7 +79,6 @@ router.post("/login",
                 {expiresIn: "1h"}
             )
             res.json({token, userId: user.id})
-
 
 
         } catch (e) {
